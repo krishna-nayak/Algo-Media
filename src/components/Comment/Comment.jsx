@@ -1,6 +1,7 @@
-import { Box, Divider, IconButton, Input, Stack, ToggleButton, ToggleButtonGroup, Typography } from "@mui/material";
+import { Box, Button, Divider, IconButton, Input, Stack, ToggleButton, ToggleButtonGroup, Typography } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import React, { useState } from "react";
+import UserComment from "./UserComment";
 
 const Comment = () => {
   const [alignment, setAlignment] = useState("top");
@@ -32,9 +33,15 @@ const Comment = () => {
       </Stack>
       <Divider />
 
-      <div>Comment Sequence</div>
+      <div>
+        {[{}].map((data) => (
+          <UserComment />
+        ))}
+      </div>
 
-      <div>Show more</div>
+      <Button sx={{ width: "100%" }} variant="outlined">
+        Show More
+      </Button>
     </Box>
   );
 };
