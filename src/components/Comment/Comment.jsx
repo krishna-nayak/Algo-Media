@@ -1,7 +1,8 @@
-import { Box, Button, Divider, IconButton, Input, Stack, ToggleButton, ToggleButtonGroup, Typography } from "@mui/material";
-import SendIcon from "@mui/icons-material/Send";
+import { Box, Button, Divider, Stack, ToggleButton, ToggleButtonGroup, Typography } from "@mui/material";
+
 import React, { useState } from "react";
 import UserComment from "./UserComment";
+import CommentInput from "./CommentInput";
 
 const Comment = () => {
   const [alignment, setAlignment] = useState("top");
@@ -21,16 +22,7 @@ const Comment = () => {
           <ToggleButton value="newest">Newest</ToggleButton>
         </ToggleButtonGroup>
       </Stack>
-      <Stack component="form" direction={"row"} gap={3} marginY={"1rem"} alignItems={"center"} justifyContent={"center"} sx={{ width: "100%" }} autoComplete="off">
-        {/* TODO: ICON user */}
-        <Box sx={{ display: "inline" }}>
-          <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" width={"40"} alt="profile-img" />
-        </Box>
-        <Input id="outlined-basic" name="comment" placeholder="Add a comment..." label="" variant="outlined" style={{ width: "80%" }} autoComplete="off" />
-        <IconButton aria-label="send" color="primary" size="large">
-          <SendIcon fontSize="inherit" />
-        </IconButton>
-      </Stack>
+      <CommentInput />
       <Divider />
 
       <div>
