@@ -7,7 +7,12 @@ const CommentInput = () => {
     <Stack component="form" direction={"row"} gap={3} marginY={"1rem"} alignItems={"center"} justifyContent={"center"} sx={{ width: "100%" }} autoComplete="off">
       {/* TODO: ICON user */}
       <Box sx={{ display: "inline" }}>
-        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" width={"40"} alt="profile-img" />
+        <img
+          src="https://yt3.ggpht.com/ytc/AGIKgqPbuTr_miPkiANBbeCy2PAzB9oaptatMWPp3_fc2w=s48-c-k-c0x00ffffff-no-rj"
+          width={"50"}
+          alt="profile-img"
+          style={{ borderRadius: "100%" }}
+        />
       </Box>
       <Input id="outlined-basic" name="comment" placeholder="Add a comment..." label="" variant="outlined" style={{ width: "80%" }} autoComplete="off" />
       <IconButton aria-label="send" color="primary" size="large">

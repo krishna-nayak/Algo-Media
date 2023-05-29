@@ -4,12 +4,19 @@ import React, { useState } from "react";
 import UserComment from "./UserComment";
 import CommentInput from "./CommentInput";
 
+// This data is used to display the comment of the each user
+import listThreadData from "./CommentThreadsData/listThreadData";
+// This function is used to display the comment of the each user
+
 const Comment = () => {
   const [alignment, setAlignment] = useState("top");
+  console.log(listThreadData);
 
   const handleChange = (event, newAlignment) => {
     setAlignment(newAlignment);
   };
+
+  const [CommentThreadsData, setCommentThreadsData] = useState(listThreadData);
   return (
     <Box style={{ background: "#fff", border: "1px solid #bbb", borderRadius: "10px", padding: "20px" }}>
       {/* TODO: TYPOGRAPHY */}
@@ -26,14 +33,15 @@ const Comment = () => {
       <Divider />
 
       <div>
-        {[{}].map((data) => (
-          <UserComment />
+        {CommentThreadsData.items.map((data, index) => (
+          <UserComment key={index} {...{ data }} />
         ))}
       </div>
 
-      <Button sx={{ width: "100%" }} variant="outlined">
+      {/* FIXME: moblie screen button display  */}
+      {/* <Button sx={{ width: "100%" }} variant="outlined">
         Show More
-      </Button>
+      </Button> */}
     </Box>
   );
 };
