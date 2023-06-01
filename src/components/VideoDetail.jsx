@@ -58,7 +58,7 @@ const VideoDetail = () => {
                 </Typography>
               </Stack>
             </Stack>
-            <Comment />
+            <Comment {...{ id: videoDetail?.id }} />
           </Box>
         </Box>
         <Box px={2} py={{ md: 1, xs: 5 }} justifyContent="center" alignItems="center">
