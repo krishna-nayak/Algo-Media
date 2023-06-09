@@ -7,6 +7,7 @@ import moment from "moment";
 import { Videos } from "./";
 import { dateFormat } from "../utils/constants";
 import Loader from "./Loader";
+import Comment from "./Comment/Comment"
 
 const VideoDetail = () => {
   const dataPromises = useLoaderData();
@@ -58,6 +59,7 @@ const VideoDetail = () => {
             </Typography>
           </Stack>
         </Stack>
+        <Comment id={id}/>
       </Box>
     )
   }
